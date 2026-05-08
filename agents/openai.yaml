@@ -1,0 +1,7 @@
+interface:
+  display_name: "Frontend Slides"
+  short_description: "Create polished HTML slide decks"
+  default_prompt: "Use $frontend-slides to create a polished HTML presentation from my notes or a PowerPoint file."
+
+policy:
+  allow_implicit_invocation: true

@@ -1,6 +1,6 @@
 # Frontend Slides
 
-A Claude Code skill for creating stunning, animation-rich HTML presentations — from scratch or by converting PowerPoint files.
+A Codex skill for creating stunning, animation-rich HTML presentations — from scratch or by converting PowerPoint files.
 
 ## What This Does
 
@@ -20,46 +20,26 @@ https://github.com/user-attachments/assets/ef57333e-f879-432a-afb9-180388982478
 
 ## Installation
 
-### Via Plugin Marketplace (Recommended)
-
-Install directly from Claude Code in two commands:
+Clone this repository into your Codex skills directory:
 
 ```bash
-/plugin marketplace add zarazhangrui/frontend-slides
-/plugin install frontend-slides@frontend-slides
+git clone https://github.com/mishgon/frontend-slides.git ~/.codex/skills/frontend-slides
 ```
 
-Then use it by typing `/frontend-slides` in Claude Code.
-
-### Manual Installation
-
-Copy the skill files to your Claude Code skills directory:
+If your Codex home is customized or the `skills` directory does not exist yet:
 
 ```bash
-# Create the skill directory
-mkdir -p ~/.claude/skills/frontend-slides/scripts
-
-# Copy all files (or clone this repo directly)
-cp SKILL.md STYLE_PRESETS.md viewport-base.css html-template.md animation-patterns.md ~/.claude/skills/frontend-slides/
-cp scripts/extract-pptx.py ~/.claude/skills/frontend-slides/scripts/
+mkdir -p "${CODEX_HOME:-$HOME/.codex}/skills" && git clone https://github.com/mishgon/frontend-slides.git "${CODEX_HOME:-$HOME/.codex}/skills/frontend-slides"
 ```
 
-Or clone directly:
-
-```bash
-git clone https://github.com/zarazhangrui/frontend-slides.git ~/.claude/skills/frontend-slides
-```
-
-Then use it by typing `/frontend-slides` in Claude Code.
+Then invoke it in Codex with `$frontend-slides`, or ask for a presentation task that matches the skill description.
 
 ## Usage
 
 ### Create a New Presentation
 
 ```
-/frontend-slides
-
-> "I want to create a pitch deck for my AI startup"
+Use $frontend-slides to create a pitch deck for my AI startup.
 ```
 
 The skill will:
@@ -73,9 +53,7 @@ The skill will:
 ### Convert a PowerPoint
 
 ```
-/frontend-slides
-
-> "Convert my presentation.pptx to a web slideshow"
+Use $frontend-slides to convert my presentation.pptx to a web slideshow.
 ```
 
 The skill will:
@@ -166,14 +144,14 @@ Uses [Playwright](https://playwright.dev) to screenshot each slide at 1920×1080
 
 ## Requirements
 
-- [Claude Code](https://claude.ai/claude-code) CLI
+- Codex with skills enabled
 - For PPT conversion: Python with `python-pptx` library
 - For URL deployment: Node.js + Vercel account (free)
 - For PDF export: Node.js (Playwright installs automatically)
 
 ## Credits
 
-Created by [@zarazhangrui](https://github.com/zarazhangrui) with Claude Code.
+Originally created by [@zarazhangrui](https://github.com/zarazhangrui). This fork adapts the skill package for Codex.
 
 Inspired by the "Vibe Coding" philosophy — building beautiful things without being a traditional software engineer.
 
